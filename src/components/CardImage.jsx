@@ -1,5 +1,5 @@
 import { CiBookmarkCheck } from "react-icons/ci";
-import { MdOutlineFavorite } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 import { FaMagic } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,8 @@ export function CardImage({ news }) {
         alt="Event cover"
         className="relative z-20 aspect-video w-full object-cover"
       />
-
+      <CiBookmarkCheck />
+      <MdFavoriteBorder />
       <CardHeader>
         <CardAction>
           <Badge variant="secondary">Featured</Badge>
