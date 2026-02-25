@@ -21,7 +21,7 @@ export function CardImage({ news }) {
         alt="Event cover"
         className="relative z-20 aspect-video w-full object-cover"
       />
-      <span className="space-x-1">
+      <span className="flex space-x-1">
         <CiBookmarkCheck />
         <MdFavoriteBorder />
       </span>
