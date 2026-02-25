@@ -24,12 +24,15 @@ export function LoginForm({ className, ...props }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-      const data = await res.json();
-      if (data) {
-        localStorage.setItem("isLoggedIn", "true");
-        navigate("/");
+
+      if (!res.ok) {
+        const text = await res.text();
+        console.error("LOGIN FAILED", text);
+        return;
       }
-      console.log(data);
+      const data = await res.json();
+      localStorage.setItem("isLoggedIn", "true");
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
