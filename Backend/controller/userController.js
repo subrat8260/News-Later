@@ -21,12 +21,14 @@ exports.longinForm = async (req, res) => {
   //save the token in the cookies
   res.cookie("AccessToken", AccessToken, {
     httpOnly: true,
-    secure: true,
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax",
     maxAge: 1000 * 60 * 15,
   });
   res.cookie("RefreshToken", RefreshToken, {
     httpOnly: true,
-    secure: true,
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax",
     maxAge: 1000 * 60 * 60 * 24 * 7,
   });
   console.log("User Login successfuly !");
