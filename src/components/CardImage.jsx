@@ -21,8 +21,10 @@ export function CardImage({ news }) {
         alt="Event cover"
         className="relative z-20 aspect-video w-full object-cover"
       />
-      <CiBookmarkCheck />
-      <MdFavoriteBorder />
+      <span className="space-x-1">
+        <CiBookmarkCheck />
+        <MdFavoriteBorder />
+      </span>
       <CardHeader>
         <CardAction>
           <Badge variant="secondary">Featured</Badge>
