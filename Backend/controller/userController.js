@@ -18,6 +18,8 @@ exports.longinForm = async (req, res) => {
   const AccessToken = Utils.userAccessToken(user._id);
   const RefreshToken = Utils.userRefreshToken(user._id);
   console.log({ AccessToken, RefreshToken });
+  //declared the isProd below
+  const isProd = process.env.NODE_ENV === "production";
   //save the token in the cookies
   res.cookie("AccessToken", AccessToken, {
     httpOnly: true,
