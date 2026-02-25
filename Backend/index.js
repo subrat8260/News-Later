@@ -16,14 +16,12 @@ app.use(
 app.use(express.json());
 app.use(userRouter);
 app.use(newsRouter);
-//"mongodb+srv://Subrat123:Subrat123@cluster0.2dctr64.mongodb.net/?appName=Cluster0";
-const uri =
-  "mongodb+srv://Subrat123:Subrat123@cluster0.ifggiov.mongodb.net/?appName=Cluster0";
+const uri = `${process.env.MONGO_URI}`;
 
 mongoose
   .connect(uri)
   .then(() => {
-    const PORT = 3000;
+    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
       console.log(`server is listen on port ${PORT}`);
     });

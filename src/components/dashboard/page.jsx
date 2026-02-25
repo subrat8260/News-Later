@@ -29,7 +29,7 @@ export default function Page() {
   useEffect(() => {
     const fetchNews = async () => {
       const News = await axios.get(
-        `http://localhost:3000/api/news?page=${page}`,
+        `${import.meta.env.VITE_API_URL}/api/news?page=${page}`,
       );
 
       setNews(News.data.articles);
