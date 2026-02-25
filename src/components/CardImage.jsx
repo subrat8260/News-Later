@@ -33,7 +33,9 @@ export function CardImage({ news }) {
         <CardDescription>{news.description}</CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">View Event</Button>
+        <a href={news.url}>
+          <Button className="w-full">View Event</Button>
+        </a>
       </CardFooter>
     </Card>
   );
